@@ -1,0 +1,22 @@
+{
+  "name": "osu-stat-tracker-backend",
+  "version": "1.0.0",
+  "description": "Backend for osu-stat-tracker",
+  "main": "",
+  "scripts": {
+    "build": "rm -rf dist && mkdir dist && npx tsc",
+    "lint": "npx eslint . --fix && npx tsc --noEmit"
+  },
+  "author": "Tandy Nguyen",
+  "license": "MIT",
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.0.0",
+    "@typescript-eslint/parser": "^5.0.0",
+    "eslint": "^8.0.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "prettier": "^2.4.1",
+    "serverless": "^2.63.0",
+    "typescript": "^4.4.4"
+  }
+}
