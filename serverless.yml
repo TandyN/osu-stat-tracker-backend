@@ -1,0 +1,21 @@
+service: ost-backend
+frameworkVersion: '2'
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  lambdaHashingVersion: "20201221"
+  region: us-east-1
+
+functions:
+  graphql:
+    handler: dist/handlers.ost_graphql
+    events:
+    - http:
+        path: /
+        method: GET
+        cors: true
+    - http:
+        path: /
+        method: POST
+        cors: true
