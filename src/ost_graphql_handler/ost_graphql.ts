@@ -1,24 +1,11 @@
-import { ApolloServer, gql } from 'apollo-server-lambda';
+import { ApolloServer } from 'apollo-server-lambda';
 
-const typeDefs = gql`
-  type Query {
-    hello: [HelloType]
-  }
+import typeDefs from './gql_types/all_types';
+import resolvers from './gql_resolvers/all_resolvers';
 
-  type HelloType {
-    id: Int!
-    phrase: String!
-  }
-`;
+const server = new ApolloServer({
+  typeDefs,
+  resolvers,
+});
 
-const resolvers = {
-  Query: {
-    hello: () => {
-      return [{ id: 1, phrase: 'test' }];
-    },
-  },
-};
-
-const server = new ApolloServer({ typeDefs, resolvers });
-
-export const ost_graphql = server.createHandler();
+export default server.createHandler();
