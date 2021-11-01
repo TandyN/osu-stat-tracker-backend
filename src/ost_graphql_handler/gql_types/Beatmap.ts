@@ -1,6 +1,6 @@
 import { gql } from 'apollo-server-lambda';
 
-export default gql`
+export = gql`
   type Beatmap {
     id: ID!
     difficulty_rating: Float!

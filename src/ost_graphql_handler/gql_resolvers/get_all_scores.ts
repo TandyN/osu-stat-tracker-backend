@@ -3,7 +3,7 @@ import beatmaps from '../test_scores/beatmap.json';
 import beatmapsets from '../test_scores/beatmapset.json';
 import users from '../test_scores/users.json';
 
-export default () => {
+export const get_all_scores = () => {
   const score_with_full_details = scores.map((score) => {
     const { user_id, beatmap_id, beatmapset_id, ...rest_of_score_object } =
       score;

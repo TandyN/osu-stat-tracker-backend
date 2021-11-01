@@ -1,6 +1,6 @@
 import { gql } from 'apollo-server-lambda';
 
-export default gql`
+export = gql`
   type User {
     id: ID!
     username: String!

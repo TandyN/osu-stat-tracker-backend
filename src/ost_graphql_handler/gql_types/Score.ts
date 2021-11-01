@@ -1,6 +1,6 @@
 import { gql } from 'apollo-server-lambda';
 
-export default gql`
+export = gql`
   type Score {
     id: ID!
     user_id: Int!

@@ -9,13 +9,20 @@ provider:
 
 functions:
   graphql:
-    handler: dist/handlers.ost_graphql
+    handler: src/handlers.ost_graphql
     events:
     - http:
-        path: /
+        path: graphql
         method: GET
         cors: true
     - http:
-        path: /
+        path: graphql
         method: POST
         cors: true
+
+plugins:
+  - serverless-offline
+  - serverless-webpack
+custom:
+  webpack:
+    includeModules: true
