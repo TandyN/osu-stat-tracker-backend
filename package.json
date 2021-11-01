@@ -6,7 +6,7 @@
   "scripts": {
     "build": "rm -rf dist && mkdir dist && npx tsc",
     "deploy:dev": "npx serverless deploy --stage dev --aws-profile ost-dev",
-    "lint": "npx eslint . --fix && npx tsc --noEmit"
+    "lint": "npx eslint . && npx tsc --noEmit"
   },
   "author": "Tandy Nguyen",
   "license": "MIT",
