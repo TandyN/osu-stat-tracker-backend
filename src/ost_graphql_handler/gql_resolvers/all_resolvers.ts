@@ -1,7 +1,7 @@
-import { get_all_scores } from './get_all_scores';
+import { get_user_scores } from './get_user_scores';
 
 export const resolvers = {
   Query: {
-    get_all_scores,
+    get_user_scores,
   },
 };
