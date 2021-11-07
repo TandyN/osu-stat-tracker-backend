@@ -1,0 +1,14 @@
+[
+  {
+    "id": "uuid1",
+    "osu_user_id": 201
+  },
+  {
+    "id": "uuid2",
+    "osu_user_id": 202
+  },
+  {
+    "id": "uuid3",
+    "osu_user_id": null
+  }
+]

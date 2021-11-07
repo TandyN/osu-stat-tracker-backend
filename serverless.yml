@@ -9,13 +9,56 @@ provider:
 
 functions:
   graphql:
-    handler: dist/handlers.ost_graphql
+    handler: src/handlers.ost_graphql
     events:
     - http:
-        path: /
+        path: graphql
         method: GET
         cors: true
     - http:
-        path: /
+        path: graphql
         method: POST
         cors: true
+
+plugins:
+  - serverless-dotenv-plugin
+  - serverless-webpack
+  - serverless-dynamodb-local
+  - serverless-offline
+
+custom:
+  webpack:
+    includeModules: true
+  dynamodb:
+    stages:
+      - dev
+    start:
+      port: 8000
+      inMemory: true
+      migrate: true
+      seed: true
+    seed:
+      domain:
+        sources:
+          - table: ost-users
+            sources: [./src/database/test_data/ost-users.json]
+          - table: osu-scores
+            sources: [./src/database/test_data/osu-scores.json]
+          - table: osu-beatmaps
+            sources: [./src/database/test_data/osu-beatmaps.json]
+          - table: osu-beatmapsets
+            sources: [./src/database/test_data/osu-beatmapsets.json]
+          - table: osu-users
+            sources: [./src/database/test_data/osu-users.json]
+          - table: osu-user-played-beatmaps
+            sources: [./src/database/test_data/osu-user-played-beatmaps.json]
+    migration:
+      dir: offline/migrations
+
+resources:
+  - ${file(yml/dynamodb/ost-users.yml)}
+  - ${file(yml/dynamodb/osu-scores.yml)}
+  - ${file(yml/dynamodb/osu-beatmaps.yml)}
+  - ${file(yml/dynamodb/osu-beatmapsets.yml)}
+  - ${file(yml/dynamodb/osu-users.yml)}
+  - ${file(yml/dynamodb/osu-user-played-beatmaps.yml)}

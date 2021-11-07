@@ -1,6 +1,6 @@
 import { gql } from 'apollo-server-lambda';
 
-export default gql`
+export = gql`
   type Statistics {
     count_50: Int!
     count_100: Int!

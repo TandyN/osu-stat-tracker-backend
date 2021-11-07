@@ -1,0 +1,71 @@
+[
+  {
+    "mode_user_id": "0~201",
+    "beatmapset_id": 1,
+    "user_id": 201,
+    "mode_int": 0,
+    "title_beatmapset_id": "beatmapset_test1~1",
+    "versions_played": {
+      "1": "easy",
+      "2": "normal"
+    },
+    "title": "beatmapset_Test1"
+  },
+  {
+    "mode_user_id": "0~201",
+    "beatmapset_id": 2,
+    "user_id": 201,
+    "mode_int": 0,
+    "title_beatmapset_id": "beatmapset_test2~2",
+    "versions_played": {
+      "3": "easy"
+    },
+    "title": "beatmapset_Test2"
+  },
+  {
+    "mode_user_id": "0~201",
+    "beatmapset_id": 3,
+    "user_id": 201,
+    "mode_int": 0,
+    "title_beatmapset_id": "beatmapset_test3~3",
+    "versions_played": {
+      "4": "easy"
+    },
+    "title": "beatmapset_Test3"
+  },
+  {
+    "mode_user_id": "0~202",
+    "beatmapset_id": 1,
+    "user_id": 202,
+    "mode_int": 0,
+    "title_beatmapset_id": "beatmapset_test1~1",
+    "versions_played": {
+      "1": "easy"
+    },
+    "title": "beatmapset_Test1"
+  },
+  {
+    "mode_user_id": "0~203",
+    "beatmapset_id": 5,
+    "user_id": 203,
+    "mode_int": 0,
+    "title_beatmapset_id": "beatmapset_test5~5",
+    "versions_played": {
+      "7": "easy",
+      "8": "normal"
+    },
+    "title": "beatmapset_Test5"
+  },
+  {
+    "mode_user_id": "0~203",
+    "beatmapset_id": 4,
+    "user_id": 203,
+    "mode_int": 0,
+    "title_beatmapset_id": "beatmapset_Test4~4",
+    "versions_played": {
+      "5": "easy",
+      "6": "normal"
+    },
+    "title": "beatmapset_Test4"
+  }
+]

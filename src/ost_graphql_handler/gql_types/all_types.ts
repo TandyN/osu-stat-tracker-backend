@@ -10,4 +10,4 @@ const Query = gql`
   type Query
 `;
 
-export default [Query, Beatmap, Beatmapset, Score, Statistics, User];
+export const typeDefs = [Query, Beatmap, Beatmapset, Score, Statistics, User];

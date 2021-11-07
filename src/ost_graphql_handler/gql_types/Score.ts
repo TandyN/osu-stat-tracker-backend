@@ -1,9 +1,13 @@
 import { gql } from 'apollo-server-lambda';
 
-export default gql`
+export = gql`
   type Score {
     id: ID!
     user_id: Int!
+    beatmap_id: Int!
+    beatmapset_id: Int!
+    mods: [String!]!
+    mods_bitwise: Int!
     accuracy: Float!
     score: Int!
     max_combo: Int!
@@ -21,6 +25,6 @@ export default gql`
   }
 
   extend type Query {
-    get_all_scores: [Score]
+    get_user_scores(user_id: Int!, mode_int: Int!): [Score]
   }
 `;
