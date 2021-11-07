@@ -40,7 +40,7 @@ custom:
     seed:
       domain:
         sources:
-          - table: ost-scores
+          - table: osu-scores
             sources: [./src/database/test_data/ost-scores.json]
           - table: osu-beatmaps
             sources: [./src/database/test_data/osu-beatmaps.json]
@@ -52,60 +52,7 @@ custom:
       dir: offline/migrations
 
 resources:
-  Resources:
-    ostScores:
-      Type: AWS::DynamoDB::Table
-      Properties:
-        TableName: ost-scores
-        AttributeDefinitions:
-          - AttributeName: user_id
-            AttributeType: N
-          - AttributeName: created_at
-            AttributeType: S
-        KeySchema:
-          - AttributeName: user_id
-            KeyType: HASH
-          - AttributeName: created_at
-            KeyType: RANGE
-        ProvisionedThroughput:
-          ReadCapacityUnits: 1
-          WriteCapacityUnits: 1
-    osuBeatmaps:
-      Type: AWS::DynamoDB::Table
-      Properties:
-        TableName: osu-beatmaps
-        AttributeDefinitions:
-          - AttributeName: id
-            AttributeType: N
-        KeySchema:
-          - AttributeName: id
-            KeyType: HASH
-        ProvisionedThroughput:
-          ReadCapacityUnits: 1
-          WriteCapacityUnits: 1
-    osuBeatmapsets:
-      Type: AWS::DynamoDB::Table
-      Properties:
-        TableName: osu-beatmapsets
-        AttributeDefinitions:
-          - AttributeName: id
-            AttributeType: N
-        KeySchema:
-          - AttributeName: id
-            KeyType: HASH
-        ProvisionedThroughput:
-          ReadCapacityUnits: 1
-          WriteCapacityUnits: 1
-    osuUsers:
-      Type: AWS::DynamoDB::Table
-      Properties:
-        TableName: osu-users
-        AttributeDefinitions:
-          - AttributeName: id
-            AttributeType: N
-        KeySchema:
-          - AttributeName: id
-            KeyType: HASH
-        ProvisionedThroughput:
-          ReadCapacityUnits: 1
-          WriteCapacityUnits: 1
+  - ${file(yml/dynamodb/osu-scores.yml)}
+  - ${file(yml/dynamodb/osu-beatmaps.yml)}
+  - ${file(yml/dynamodb/osu-beatmapsets.yml)}
+  - ${file(yml/dynamodb/osu-users.yml)}

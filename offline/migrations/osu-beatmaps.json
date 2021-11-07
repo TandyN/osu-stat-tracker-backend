@@ -1,5 +1,5 @@
 {
-  "TableName": "ost-scores",
+  "TableName": "osu-beatmaps",
   "KeySchema": [
     {
       "AttributeName": "id",

@@ -25,6 +25,6 @@ export = gql`
   }
 
   extend type Query {
-    get_user_scores(id: Int!): [Score]
+    get_user_scores(user_id: Int!, mode_int: Int!): [Score]
   }
 `;

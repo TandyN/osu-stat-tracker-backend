@@ -1,15 +1,19 @@
 import { documentClient } from '../../database/dynamodb';
 
 interface UserId {
-  id: number;
+  user_id: number;
+  mode_int: number;
 }
 
-export const get_user_scores = async (parent: unknown, { id }: UserId) => {
+export const get_user_scores = async (
+  parent: unknown,
+  { user_id, mode_int }: UserId,
+) => {
   const params = {
-    TableName: `${process.env.DDB_OST_SCORES_TABLE}`,
-    KeyConditionExpression: 'user_id = :user_id',
+    TableName: `${process.env.DDB_OSU_SCORES_TABLE}`,
+    KeyConditionExpression: 'mode_user_id = :mode_user_id',
     ExpressionAttributeValues: {
-      ':user_id': id,
+      ':mode_user_id': `${mode_int}~${user_id}`,
     },
   };
 

@@ -1,0 +1,12 @@
+Resources:  
+  ostUsers:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      TableName: ost-users
+      KeySchema:
+        - AttributeName: id
+          KeyType: HASH
+      AttributeDefinitions:
+        - AttributeName: id
+          AttributeType: S
+      BillingMode: PAY_PER_REQUEST

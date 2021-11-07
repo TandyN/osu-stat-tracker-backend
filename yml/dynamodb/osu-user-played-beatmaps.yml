@@ -1,0 +1,27 @@
+Resources:  
+  osuUserPlayedBeatmaps:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      TableName: osu-user-played-beatmaps
+      KeySchema:
+        - AttributeName: user_id
+          KeyType: HASH
+        - AttributeName: beatmapset_id
+          KeyType: RANGE
+      AttributeDefinitions:
+        - AttributeName: user_id
+          AttributeType: N
+        - AttributeName: beatmapset_id
+          AttributeType: N
+        - AttributeName: title_beatmapset_id
+          AttributeType: S
+      LocalSecondaryIndexes:
+        - IndexName: title_beatmapset_id
+          KeySchema:
+            - AttributeName: user_id
+              KeyType: HASH
+            - AttributeName: title_beatmapset_id
+              KeyType: RANGE
+          Projection:
+            ProjectionType: ALL
+      BillingMode: PAY_PER_REQUEST
