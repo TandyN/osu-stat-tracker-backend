@@ -4,13 +4,13 @@ Resources:
     Properties:
       TableName: osu-user-played-beatmaps
       KeySchema:
-        - AttributeName: user_id
+        - AttributeName: mode_user_id
           KeyType: HASH
         - AttributeName: beatmapset_id
           KeyType: RANGE
       AttributeDefinitions:
-        - AttributeName: user_id
-          AttributeType: N
+        - AttributeName: mode_user_id
+          AttributeType: S
         - AttributeName: beatmapset_id
           AttributeType: N
         - AttributeName: title_beatmapset_id
@@ -18,7 +18,7 @@ Resources:
       LocalSecondaryIndexes:
         - IndexName: title_beatmapset_id
           KeySchema:
-            - AttributeName: user_id
+            - AttributeName: mode_user_id
               KeyType: HASH
             - AttributeName: title_beatmapset_id
               KeyType: RANGE

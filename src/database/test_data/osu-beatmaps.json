@@ -1,8 +1,8 @@
 [
   {
+    "id": 1,
     "beatmapset_id": 1,
     "difficulty_rating": 1.01,
-    "id": 1,
     "mode": "osu",
     "status": "loved",
     "total_length": 100,
@@ -29,9 +29,9 @@
     "checksum": "abc"
   },
   {
+    "id": 2,
     "beatmapset_id": 1,
     "difficulty_rating": 2.01,
-    "id": 2,
     "mode": "osu",
     "status": "loved",
     "total_length": 100,
@@ -58,9 +58,9 @@
     "checksum": "qwe"
   },
   {
+    "id": 3,
     "beatmapset_id": 2,
     "difficulty_rating": 1.01,
-    "id": 3,
     "mode": "osu",
     "status": "loved",
     "total_length": 100,
@@ -87,9 +87,9 @@
     "checksum": "wer"
   },
   {
+    "id": 4,
     "beatmapset_id": 3,
     "difficulty_rating": 1.01,
-    "id": 4,
     "mode": "osu",
     "status": "loved",
     "total_length": 100,
@@ -116,9 +116,9 @@
     "checksum": "abc"
   },
   {
+    "id": 5,
     "beatmapset_id": 4,
     "difficulty_rating": 1.01,
-    "id": 5,
     "mode": "osu",
     "status": "loved",
     "total_length": 100,
@@ -145,9 +145,9 @@
     "checksum": "ert"
   },
   {
+    "id": 6,
     "beatmapset_id": 4,
     "difficulty_rating": 2.01,
-    "id": 6,
     "mode": "osu",
     "status": "loved",
     "total_length": 100,
@@ -174,9 +174,9 @@
     "checksum": "asd"
   },
   {
+    "id": 7,
     "beatmapset_id": 5,
     "difficulty_rating": 1.01,
-    "id": 7,
     "mode": "osu",
     "status": "loved",
     "total_length": 100,
@@ -203,9 +203,9 @@
     "checksum": "sdf"
   },
   {
+    "id": 8,
     "beatmapset_id": 5,
     "difficulty_rating": 2.01,
-    "id": 8,
     "mode": "osu",
     "status": "loved",
     "total_length": 100,
@@ -232,9 +232,9 @@
     "checksum": "dfg"
   },
   {
+    "id": 9,
     "beatmapset_id": 5,
     "difficulty_rating": 3.01,
-    "id": 9,
     "mode": "osu",
     "status": "loved",
     "total_length": 100,
@@ -261,9 +261,9 @@
     "checksum": "fgh"
   },
   {
+    "id": 10,
     "beatmapset_id": 5,
     "difficulty_rating": 4.01,
-    "id": 10,
     "mode": "osu",
     "status": "loved",
     "total_length": 100,

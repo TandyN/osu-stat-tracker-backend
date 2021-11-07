@@ -1,5 +1,6 @@
 [
   {
+    "id": 1,
     "artist": "beatmapset_Test1",
     "artist_unicode": "beatmapset_Test1",
     "covers": {
@@ -15,7 +16,6 @@
     "creator": "beatmapset_Test1",
     "favourite_count": 1,
     "hype": null,
-    "id": 1,
     "nsfw": false,
     "play_count": 384885,
     "preview_url": "//beatmapset_test1.mp3",
@@ -28,6 +28,7 @@
     "video": false
   },
   {
+    "id": 2,
     "artist": "beatmapset_Test2",
     "artist_unicode": "beatmapset_Test2",
     "covers": {
@@ -43,7 +44,6 @@
     "creator": "beatmapset_Test2",
     "favourite_count": 1,
     "hype": null,
-    "id": 2,
     "nsfw": false,
     "play_count": 384885,
     "preview_url": "//beatmapset_test2.mp3",
@@ -56,6 +56,7 @@
     "video": false
   },
   {
+    "id": 3,
     "artist": "beatmapset_Test3",
     "artist_unicode": "beatmapset_Test3",
     "covers": {
@@ -71,7 +72,6 @@
     "creator": "beatmapset_Test3",
     "favourite_count": 1,
     "hype": null,
-    "id": 3,
     "nsfw": false,
     "play_count": 384885,
     "preview_url": "//beatmapset_test3.mp3",
@@ -84,6 +84,7 @@
     "video": false
   },
   {
+    "id": 4,
     "artist": "beatmapset_Test4",
     "artist_unicode": "beatmapset_Test4",
     "covers": {
@@ -99,7 +100,6 @@
     "creator": "beatmapset_Test4",
     "favourite_count": 1,
     "hype": null,
-    "id": 4,
     "nsfw": false,
     "play_count": 384885,
     "preview_url": "//beatmapset_test4.mp3",
@@ -112,6 +112,7 @@
     "video": false
   },
   {
+    "id": 5,
     "artist": "beatmapset_Test5",
     "artist_unicode": "beatmapset_Test5",
     "covers": {
@@ -127,7 +128,6 @@
     "creator": "beatmapset_Test5",
     "favourite_count": 1,
     "hype": null,
-    "id": 5,
     "nsfw": false,
     "play_count": 384885,
     "preview_url": "//beatmapset_test5.mp3",

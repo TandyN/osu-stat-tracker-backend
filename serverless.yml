@@ -41,13 +41,15 @@ custom:
       domain:
         sources:
           - table: osu-scores
-            sources: [./src/database/test_data/ost-scores.json]
+            sources: [./src/database/test_data/osu-scores.json]
           - table: osu-beatmaps
             sources: [./src/database/test_data/osu-beatmaps.json]
           - table: osu-beatmapsets
             sources: [./src/database/test_data/osu-beatmapsets.json]
           - table: osu-users
             sources: [./src/database/test_data/osu-users.json]
+          - table: osu-user-played-beatmaps
+            sources: [./src/database/test_data/osu-user-played-beatmaps.json]
     migration:
       dir: offline/migrations
 
@@ -56,3 +58,4 @@ resources:
   - ${file(yml/dynamodb/osu-beatmaps.yml)}
   - ${file(yml/dynamodb/osu-beatmapsets.yml)}
   - ${file(yml/dynamodb/osu-users.yml)}
+  - ${file(yml/dynamodb/osu-user-played-beatmaps.yml)}
