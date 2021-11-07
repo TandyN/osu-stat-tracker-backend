@@ -40,6 +40,8 @@ custom:
     seed:
       domain:
         sources:
+          - table: ost-users
+            sources: [./src/database/test_data/ost-users.json]
           - table: osu-scores
             sources: [./src/database/test_data/osu-scores.json]
           - table: osu-beatmaps
@@ -54,6 +56,7 @@ custom:
       dir: offline/migrations
 
 resources:
+  - ${file(yml/dynamodb/ost-users.yml)}
   - ${file(yml/dynamodb/osu-scores.yml)}
   - ${file(yml/dynamodb/osu-beatmaps.yml)}
   - ${file(yml/dynamodb/osu-beatmapsets.yml)}
