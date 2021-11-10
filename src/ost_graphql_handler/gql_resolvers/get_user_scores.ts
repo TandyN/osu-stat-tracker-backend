@@ -1,5 +1,3 @@
-import { documentClient } from '../../database/dynamodb';
-
 interface UserId {
   user_id: number;
   mode_int: number;
@@ -8,6 +6,8 @@ interface UserId {
 export const get_user_scores = async (
   parent: unknown,
   { user_id, mode_int }: UserId,
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  { documentClient }: any,
 ) => {
   const params = {
     TableName: `${process.env.DDB_OSU_SCORES_TABLE}`,
