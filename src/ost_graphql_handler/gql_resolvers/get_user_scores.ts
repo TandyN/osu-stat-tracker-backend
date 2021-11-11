@@ -1,11 +1,11 @@
-interface UserId {
+interface User_Id {
   user_id: number;
   mode_int: number;
 }
 
 export const get_user_scores = async (
   parent: unknown,
-  { user_id, mode_int }: UserId,
+  { user_id, mode_int }: User_Id,
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   { documentClient }: any,
 ) => {
