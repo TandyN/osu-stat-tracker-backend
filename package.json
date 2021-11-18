@@ -6,7 +6,8 @@
   "scripts": {
     "deploy:dev": "npx serverless deploy --stage dev --aws-profile ost-dev",
     "deploy:offline": "npx serverless offline start",
-    "lint": "npx eslint . && npx tsc --noEmit"
+    "lint": "npx eslint . && npx tsc --noEmit",
+    "test:unit": "npx jest unit"
   },
   "author": "Tandy Nguyen",
   "license": "MIT",
