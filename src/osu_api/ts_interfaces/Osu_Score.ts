@@ -1,4 +1,4 @@
-import { Mods } from '../helpers/mods_to_bitwise';
+import { Mods } from './Mods';
 
 export interface Osu_Score {
   mode_int: number;

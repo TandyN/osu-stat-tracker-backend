@@ -1,4 +1,7 @@
-import { Osu_Score, Beatmapset } from '../ts_interfaces/osu_api';
+import {
+  Osu_Score,
+  Beatmapset,
+} from '../../../osu_api/ts_interfaces/Osu_Score';
 
 export const create_dynamodb_osu_beatmapset = (
   score: Osu_Score,

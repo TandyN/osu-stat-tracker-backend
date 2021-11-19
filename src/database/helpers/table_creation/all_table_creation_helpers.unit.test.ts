@@ -1,12 +1,15 @@
 import _ from 'lodash';
 
-import { mods_to_bitwise, Mods } from './mods_to_bitwise';
+import { Dynamodb_Osu_Score } from '../../ts_interfaces/Dynamodb_Osu_Score';
+import { Osu_Score } from '../../../osu_api/ts_interfaces/Osu_Score';
+import { Mods } from '../../../osu_api/ts_interfaces/Mods';
+
 import {
   create_dynamodb_osu_score,
-  Dynamodb_Osu_Score,
-} from './create_dynamodb_osu_score';
-import { Osu_Score } from '../ts_interfaces/osu_api';
-import user_recent_query from '../../osu_api/test_data/user_recent_query.json';
+  mods_to_bitwise,
+} from './all_table_creation_helpers';
+
+import user_recent_query from '../../../osu_api/test_data/user_recent_query.json';
 
 describe('mods_to_bitwise function', () => {
   it('should return a number by adding up all of the mods enum values', () => {

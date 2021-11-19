@@ -1,14 +1,7 @@
-import { mods_to_bitwise } from './mods_to_bitwise';
-import { Osu_Score } from '../ts_interfaces/osu_api';
+import { Osu_Score } from '../../../osu_api/ts_interfaces/Osu_Score';
+import { Dynamodb_Osu_Score } from '../../ts_interfaces/Dynamodb_Osu_Score';
 
-export interface Dynamodb_Osu_Score extends Osu_Score {
-  mode_user_id: string;
-  mode_user_id_beatmap: string;
-  mode_user_id_beatmap_mods: string;
-  mods_bitwise: number;
-  beatmap_id: number;
-  beatmapset_id: number;
-}
+import { mods_to_bitwise } from './mods_to_bitwise';
 
 export const create_dynamodb_osu_score = (
   osu_api_score: Osu_Score,
