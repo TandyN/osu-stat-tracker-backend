@@ -153,34 +153,50 @@ describe('create_dynamodb_osu_score function', () => {
 
     expect(() => {
       create_dynamodb_osu_score(missing_mode_int as never);
-    }).toThrow(new Error('Detected missing field'));
+    }).toThrow(
+      new Error('Detected missing field in create_dynamodb_osu_score'),
+    );
 
     expect(() => {
       create_dynamodb_osu_score(missing_beatmap as never);
-    }).toThrow(new Error('Detected missing field'));
+    }).toThrow(
+      new Error('Detected missing field in create_dynamodb_osu_score'),
+    );
 
     expect(() => {
       create_dynamodb_osu_score(missing_beatmap_id as never);
-    }).toThrow(new Error('Detected missing field'));
+    }).toThrow(
+      new Error('Detected missing field in create_dynamodb_osu_score'),
+    );
 
     expect(() => {
       create_dynamodb_osu_score(missing_beatmapset as never);
-    }).toThrow(new Error('Detected missing field'));
+    }).toThrow(
+      new Error('Detected missing field in create_dynamodb_osu_score'),
+    );
 
     expect(() => {
       create_dynamodb_osu_score(missing_beatmapset_id as never);
-    }).toThrow(new Error('Detected missing field'));
+    }).toThrow(
+      new Error('Detected missing field in create_dynamodb_osu_score'),
+    );
 
     expect(() => {
       create_dynamodb_osu_score(missing_user as never);
-    }).toThrow(new Error('Detected missing field'));
+    }).toThrow(
+      new Error('Detected missing field in create_dynamodb_osu_score'),
+    );
 
     expect(() => {
       create_dynamodb_osu_score(missing_user_id as never);
-    }).toThrow(new Error('Detected missing field'));
+    }).toThrow(
+      new Error('Detected missing field in create_dynamodb_osu_score'),
+    );
 
     expect(() => {
       create_dynamodb_osu_score(missing_mods as never);
-    }).toThrow(new Error('Detected missing field'));
+    }).toThrow(
+      new Error('Detected missing field in create_dynamodb_osu_score'),
+    );
   });
 });

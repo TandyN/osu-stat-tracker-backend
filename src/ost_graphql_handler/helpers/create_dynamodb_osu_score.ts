@@ -27,7 +27,7 @@ export const create_dynamodb_osu_score = (
     !beatmapset.id ||
     !user.id
   ) {
-    throw new Error('Detected missing field');
+    throw new Error('Detected missing field in create_dynamodb_osu_score');
   }
 
   const mods_bitwise = mods_to_bitwise(mods);
