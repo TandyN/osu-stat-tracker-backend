@@ -1,37 +1,7 @@
-import { mods_to_bitwise, Mods } from './mods_to_bitwise';
+import { Osu_Score } from '../../../osu_api/ts_interfaces/Osu_Score';
+import { Dynamodb_Osu_Score } from '../../ts_interfaces/Dynamodb_Osu_Score';
 
-export interface Osu_Score {
-  mode_int: number;
-  mods: Array<keyof typeof Mods>;
-  beatmap?: Beatmap;
-  beatmapset?: Beatmapset;
-  user?: User;
-  [index: string]: unknown;
-}
-
-interface Beatmap {
-  id: number;
-  [index: string]: unknown;
-}
-
-interface Beatmapset {
-  id: number;
-  [index: string]: unknown;
-}
-
-interface User {
-  id: number;
-  [index: string]: unknown;
-}
-
-export interface Dynamodb_Osu_Score extends Osu_Score {
-  mode_user_id: string;
-  mode_user_id_beatmap: string;
-  mode_user_id_beatmap_mods: string;
-  mods_bitwise: number;
-  beatmap_id: number;
-  beatmapset_id: number;
-}
+import { mods_to_bitwise } from './mods_to_bitwise';
 
 export const create_dynamodb_osu_score = (
   osu_api_score: Osu_Score,
@@ -50,7 +20,7 @@ export const create_dynamodb_osu_score = (
     !beatmapset.id ||
     !user.id
   ) {
-    throw new Error('Detected missing field');
+    throw new Error('Detected missing field in create_dynamodb_osu_score');
   }
 
   const mods_bitwise = mods_to_bitwise(mods);
