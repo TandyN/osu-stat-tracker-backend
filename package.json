@@ -6,22 +6,28 @@
   "scripts": {
     "deploy:dev": "npx serverless deploy --stage dev --aws-profile ost-dev",
     "deploy:offline": "npx serverless offline start",
-    "lint": "npx eslint . && npx tsc --noEmit"
+    "lint": "npx eslint . && npx tsc --noEmit",
+    "test:unit": "npx jest unit"
   },
   "author": "Tandy Nguyen",
   "license": "MIT",
   "devDependencies": {
+    "@types/jest": "^27.0.2",
     "@typescript-eslint/eslint-plugin": "^5.0.0",
     "@typescript-eslint/parser": "^5.0.0",
     "eslint": "^8.0.1",
     "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-jest": "^25.2.4",
+    "eslint-plugin-no-only-tests": "^2.6.0",
     "eslint-plugin-prettier": "^4.0.0",
+    "jest": "^27.3.1",
     "prettier": "^2.4.1",
     "serverless": "^2.63.0",
     "serverless-dotenv-plugin": "^3.10.0",
     "serverless-dynamodb-local": "^0.2.40",
     "serverless-offline": "^8.2.0",
     "serverless-webpack": "^5.5.5",
+    "ts-jest": "^27.0.7",
     "ts-loader": "^9.2.6",
     "typescript": "^4.4.4",
     "webpack": "^5.61.0",
@@ -30,6 +36,7 @@
   "dependencies": {
     "apollo-server-lambda": "^3.4.0",
     "aws-sdk": "^2.1018.0",
-    "graphql": "^15.6.1"
+    "graphql": "^15.6.1",
+    "lodash": "^4.17.21"
   }
 }
