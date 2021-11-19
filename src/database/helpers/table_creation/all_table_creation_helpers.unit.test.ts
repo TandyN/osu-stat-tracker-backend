@@ -6,6 +6,9 @@ import { Mods } from '../../../osu_api/ts_interfaces/Mods';
 
 import {
   create_dynamodb_osu_score,
+  create_dynamodb_osu_user,
+  create_dynamodb_osu_beatmap,
+  create_dynamodb_osu_beatmapset,
   mods_to_bitwise,
 } from './all_table_creation_helpers';
 
@@ -200,6 +203,177 @@ describe('create_dynamodb_osu_score function', () => {
       create_dynamodb_osu_score(missing_mods as never);
     }).toThrow(
       new Error('Detected missing field in create_dynamodb_osu_score'),
+    );
+  });
+});
+
+describe('create_dynamodb_osu_user function', () => {
+  it('should return only the user object from original osi! API user recent call', () => {
+    const actual_dynamodb_osu_user = create_dynamodb_osu_user(
+      user_recent_query[0] as Osu_Score,
+    );
+
+    const expected_dynamodb_osu_user = {
+      avatar_url: 'https://a.ppy.sh/1602343?1401712667.jpg',
+      country_code: 'US',
+      default_group: 'default',
+      id: 1602343,
+      is_active: true,
+      is_bot: false,
+      is_deleted: false,
+      is_online: true,
+      is_supporter: true,
+      last_visit: '2021-11-10T05:21:56+00:00',
+      pm_friends_only: false,
+      profile_colour: null,
+      username: 'TandyN',
+    };
+
+    expect(actual_dynamodb_osu_user).toEqual(expected_dynamodb_osu_user);
+  });
+
+  it('should throw error if user key / user.id is missing', () => {
+    interface Missing_Field {
+      user?: { id?: number };
+    }
+
+    const missing_user: Missing_Field = user_recent_query[0];
+    if (missing_user.user) {
+      delete missing_user.user.id;
+      expect(() => {
+        create_dynamodb_osu_user(missing_user as never);
+      }).toThrow(new Error('No user found in create_dynamodb_osu_user'));
+    }
+    delete missing_user.user;
+    expect(() => {
+      create_dynamodb_osu_user(missing_user as never);
+    }).toThrow(new Error('No user found in create_dynamodb_osu_user'));
+  });
+});
+
+describe('create_dynamodb_osu_beatmap function', () => {
+  it('should return only the beatmap object from original osi! API user recent call', () => {
+    const actual_dynamodb_osu_beatmap = create_dynamodb_osu_beatmap(
+      user_recent_query[0] as Osu_Score,
+    );
+
+    const expected_dynamodb_osu_beatmap = {
+      beatmapset_id: 783213,
+      difficulty_rating: 2.52,
+      id: 1644684,
+      mode: 'osu',
+      status: 'loved',
+      total_length: 111,
+      user_id: 4610047,
+      version: "Minorsonek's Normal",
+      accuracy: 4.5,
+      ar: 5.5,
+      bpm: 215,
+      convert: false,
+      count_circles: 92,
+      count_sliders: 138,
+      count_spinners: 0,
+      cs: 3,
+      deleted_at: null,
+      drain: 3,
+      hit_length: 111,
+      is_scoreable: true,
+      last_updated: '2021-01-01T22:17:39+00:00',
+      mode_int: 0,
+      passcount: 32775,
+      playcount: 78319,
+      ranked: 4,
+      url: 'https://osu.ppy.sh/beatmaps/1644684',
+      checksum: '4ae7858e5393ccb976a194ae6e6b5f72',
+    };
+
+    expect(actual_dynamodb_osu_beatmap).toEqual(expected_dynamodb_osu_beatmap);
+  });
+
+  it('should throw error if beatmap key / beatmap.id is missing', () => {
+    interface Missing_Field {
+      beatmap?: { id?: number };
+    }
+
+    const missing_beatmap: Missing_Field = user_recent_query[0];
+    if (missing_beatmap.beatmap) {
+      delete missing_beatmap.beatmap.id;
+      expect(() => {
+        create_dynamodb_osu_beatmap(missing_beatmap as never);
+      }).toThrow(new Error('No beatmap found in create_dynamodb_osu_beatmap'));
+    }
+    delete missing_beatmap.beatmap;
+    expect(() => {
+      create_dynamodb_osu_beatmap(missing_beatmap as never);
+    }).toThrow(new Error('No beatmap found in create_dynamodb_osu_beatmap'));
+  });
+});
+
+describe('create_dynamodb_osu_beatmapset function', () => {
+  it('should return only the beatmapset object from original osi! API user recent call', () => {
+    const actual_dynamodb_osu_beatmapset = create_dynamodb_osu_beatmapset(
+      user_recent_query[0] as Osu_Score,
+    );
+
+    const expected_dynamodb_osu_beatmapset = {
+      artist: 'UNDEAD CORPORATION',
+      artist_unicode: 'UNDEAD CORPORATION',
+      covers: {
+        cover:
+          'https://assets.ppy.sh/beatmaps/783213/covers/cover.jpg?1631508561',
+        'cover@2x':
+          'https://assets.ppy.sh/beatmaps/783213/covers/cover@2x.jpg?1631508561',
+        card: 'https://assets.ppy.sh/beatmaps/783213/covers/card.jpg?1631508561',
+        'card@2x':
+          'https://assets.ppy.sh/beatmaps/783213/covers/card@2x.jpg?1631508561',
+        list: 'https://assets.ppy.sh/beatmaps/783213/covers/list.jpg?1631508561',
+        'list@2x':
+          'https://assets.ppy.sh/beatmaps/783213/covers/list@2x.jpg?1631508561',
+        slimcover:
+          'https://assets.ppy.sh/beatmaps/783213/covers/slimcover.jpg?1631508561',
+        'slimcover@2x':
+          'https://assets.ppy.sh/beatmaps/783213/covers/slimcover@2x.jpg?1631508561',
+      },
+      creator: 'PoNo',
+      favourite_count: 1210,
+      hype: null,
+      id: 783213,
+      nsfw: false,
+      play_count: 1724586,
+      preview_url: '//b.ppy.sh/preview/783213.mp3',
+      source: '東方地霊殿 ～ Subterranean Animism.',
+      status: 'loved',
+      title: 'Embraced by the Flame',
+      title_unicode: 'Embraced by the Flame',
+      track_id: 1206,
+      user_id: 4610047,
+      video: false,
+    };
+
+    expect(actual_dynamodb_osu_beatmapset).toEqual(
+      expected_dynamodb_osu_beatmapset,
+    );
+  });
+
+  it('should throw error if beatmapset key / beatmapset.id is missing', () => {
+    interface Missing_Field {
+      beatmapset?: { id?: number };
+    }
+
+    const missing_beatmapset: Missing_Field = user_recent_query[0];
+    if (missing_beatmapset.beatmapset) {
+      delete missing_beatmapset.beatmapset.id;
+      expect(() => {
+        create_dynamodb_osu_beatmapset(missing_beatmapset as never);
+      }).toThrow(
+        new Error('No beatmapset found in create_dynamodb_osu_beatmapset'),
+      );
+    }
+    delete missing_beatmapset.beatmapset;
+    expect(() => {
+      create_dynamodb_osu_beatmapset(missing_beatmapset as never);
+    }).toThrow(
+      new Error('No beatmapset found in create_dynamodb_osu_beatmapset'),
     );
   });
 });

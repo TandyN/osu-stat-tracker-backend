@@ -8,7 +8,9 @@ export const create_dynamodb_osu_beatmapset = (
 ): Beatmapset => {
   if (score.beatmapset) {
     if (score.beatmapset.id) {
-      return score.beatmapset;
+      return {
+        ...score.beatmapset,
+      };
     }
   }
   throw new Error('No beatmapset found in create_dynamodb_osu_beatmapset');
