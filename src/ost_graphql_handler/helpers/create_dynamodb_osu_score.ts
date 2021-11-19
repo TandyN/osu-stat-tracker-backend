@@ -1,28 +1,5 @@
-import { mods_to_bitwise, Mods } from './mods_to_bitwise';
-
-export interface Osu_Score {
-  mode_int: number;
-  mods: Array<keyof typeof Mods>;
-  beatmap?: Beatmap;
-  beatmapset?: Beatmapset;
-  user?: User;
-  [index: string]: unknown;
-}
-
-interface Beatmap {
-  id: number;
-  [index: string]: unknown;
-}
-
-interface Beatmapset {
-  id: number;
-  [index: string]: unknown;
-}
-
-interface User {
-  id: number;
-  [index: string]: unknown;
-}
+import { mods_to_bitwise } from './mods_to_bitwise';
+import { Osu_Score } from '../ts_interfaces/osu_api';
 
 export interface Dynamodb_Osu_Score extends Osu_Score {
   mode_user_id: string;

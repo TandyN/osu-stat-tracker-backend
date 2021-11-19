@@ -3,9 +3,9 @@ import _ from 'lodash';
 import { mods_to_bitwise, Mods } from './mods_to_bitwise';
 import {
   create_dynamodb_osu_score,
-  Osu_Score,
   Dynamodb_Osu_Score,
 } from './create_dynamodb_osu_score';
+import { Osu_Score } from '../ts_interfaces/osu_api';
 import user_recent_query from '../../osu_api/test_data/user_recent_query.json';
 
 describe('mods_to_bitwise function', () => {
